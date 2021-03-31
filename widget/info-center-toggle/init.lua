@@ -36,7 +36,7 @@ local return_button = function()
 				nil,
 				function()
 					awful.screen.focused().right_panel:toggle()
-					switch_rdb_pane('notif_mode')
+					switch_rdb_pane('today_mode')
 				end
 			)
 		)

@@ -9,21 +9,21 @@ local tags = {
 		type = 'internet',
 		icon = icons.web_browser,
 		default_app = apps.default.web_browser,
-		layout = awful.layout.suit.max,
+		layout = awful.layout.suit.tile,
 		gap = beautiful.useless_gap
 	},
 	{
 		type = 'terminal',
 		icon = icons.terminal,
 		default_app = apps.default.terminal,
-		layout = awful.layout.suit.max,
+		layout = awful.layout.suit.tile,
 		gap = beautiful.useless_gap
 	},
 	{
 		type = 'code',
 		icon = icons.text_editor,
 		default_app = apps.default.text_editor,
-		layout = awful.layout.suit.max,
+		layout = awful.layout.suit.tile,
 		gap = beautiful.useless_gap
 	},
 	{
@@ -31,14 +31,7 @@ local tags = {
 		icon = icons.games,
 		default_app = apps.default.game,
 		gap = beautiful.useless_gap,
-		layout = awful.layout.suit.max
-	},
-	{
-		type = 'sandbox',
-		icon = icons.sandbox,
-		default_app = apps.default.sandbox,
-		layout = awful.layout.suit.max,
-		gap = 0
+		layout = awful.layout.suit.tile
 	},
 	{
 		type = 'files',
@@ -52,29 +45,30 @@ local tags = {
 		icon = icons.multimedia,
 		default_app = apps.default.multimedia,
 		gap = beautiful.useless_gap,
-		layout = awful.layout.suit.max,
+		layout = awful.layout.suit.tile,
 		gap = 0
 	},
 	{
-		type = 'graphics',
-		icon = icons.graphics,
-		default_app = apps.default.graphics,
-		layout = awful.layout.suit.max,
-		gap = beautiful.useless_gap
+		type = 'messaging',
+		icon = icons.social,
+		default_app = apps.default.messaging,
+		gap = beautiful.useless_gap,
+		layout = awful.layout.suit.tile
+	},
+	{
+		type = 'mail',
+		icon = icons.mail,
+		default_app = apps.default.mail,
+		gap = beautiful.useless_gap,
+		layout = awful.layout.suit.tile
 	},
 	{
 		type = 'any',
 		icon = icons.development,
 		default_app = apps.default.development,
 		gap = beautiful.useless_gap,
-		layout = awful.layout.suit.max
+		layout = awful.layout.suit.tile
 	}
-	-- {
-	--   type = 'social',
-	--   icon = icons.social,
-	--   default_app = 'discord',
-	--   gap = beautiful.useless_gap
-	-- }
 }
 
 -- Set tags layout

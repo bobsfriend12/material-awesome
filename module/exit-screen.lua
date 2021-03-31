@@ -18,11 +18,11 @@ local msg_table = {
 	'Don\'t forget to come back!',
 	'Adios, amigo.',
 	'Are you leaving?',
-	'Arrivederci.',
-	'Au revoir!',
+	-- 'Arrivederci.',
+	-- 'Au revoir!',
 	'Happy trails!',
 	'Sayonara!',
-	'Ciao!',
+	-- 'Ciao!',
 	'Well... bye.',
 	'Go out there and make a difference.',
 	'Change da world. My final message. Goodbye.',
@@ -31,7 +31,7 @@ local msg_table = {
 }
 
 local greeter_message = wibox.widget {
-	markup = 'Choose wisely!',
+	markup = 'Go out there and make a difference.',
 	font = 'Inter UltraLight 48',
 	align = 'center',
 	valign = 'center',

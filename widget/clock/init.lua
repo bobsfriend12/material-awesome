@@ -11,7 +11,7 @@ local create_clock = function(s)
 
 	local clock_format = nil
 	if not military_mode then
-		clock_format = '<span font="Roboto Mono bold 9">%d.%m.%Y\n  %I:%M %p</span>'
+		clock_format = '<span font="Roboto Mono bold 11">%I:%M %p</span>'
 	else
 		clock_format = '<span font="Roboto Mono bold 9">%d.%m.%Y\n     %H:%M</span>'
 	end
@@ -20,6 +20,7 @@ local create_clock = function(s)
 		clock_format,
 		1
 	)
+	-- s.clock_widget = wibox.widget.textclock ("<span font="Roboto Mono bold 9">%m-%d-%Y\n  %I:%M %p</span>", 1)
 
 	s.clock_widget = wibox.widget {
 		{
@@ -103,7 +104,7 @@ local create_clock = function(s)
 	)
 	
 	s.month_calendar      = awful.widget.calendar_popup.month({
-		start_sunday      = false,
+		start_sunday      = true,
 		spacing           = dpi(5),
 		font              = 'Inter Regular 10',
 		long_weekdays     = true,
@@ -151,6 +152,9 @@ local create_clock = function(s)
 			on_hover = false 
 		}
 	)
+
+
+	
 
 	return s.clock_widget
 end

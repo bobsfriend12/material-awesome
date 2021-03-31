@@ -8,15 +8,23 @@ return {
 		-- Default terminal emulator
 		terminal = 'env alacritty',
 		-- Default web browser
-		web_browser = 'env brave-browser',
+		web_browser = 'firefox-developer-edition',
 		-- Default text editor
-		text_editor = 'geany',
+		text_editor = 'gedit',
 		-- Default file manager
 		file_manager = 'nautilus',
 		-- Default media player
 		multimedia = 'vlc',
+		--Defualt Music App
+		music = 'spotify',
+		--Defualt Main App
+		mail = 'mailspring',
+		-- Defualt Messaging App
+		messageing = 'discord',
+		-- Defualt Home App
+		home = 'firefox-developer-edition',
 		-- Default game, can be a launcher like steam
-		game = 'env steam',
+		game = 'minecraft-launcher',
 		-- Default graphics editor
 		graphics = 'gimp',
 		-- Default sandbox
@@ -32,7 +40,7 @@ return {
 		-- Default GUI package manager
 		package_manager = 'synaptic',
 		-- Default locker
-		lock = 'i3lock-fancy',
+		lock = 'sh /home/bobsfriend12/.i3/lock',
 		-- Default quake terminal
 		quake = 'env alacritty --title QuakeTerminal',
 		
@@ -66,9 +74,6 @@ return {
 		
 		-- ibus keyboard daemon for keyboard management and emoji typing
 		'ibus-daemon --xim --daemonize',
-
-		-- scream audio sink for windows10 VM audio
-    	'scream-start',
 
 		-- turn on numlock
     	'numlockx on',
@@ -105,24 +110,26 @@ return {
 		-- Spawn "dirty" apps that can linger between sessions
 		-- It is suggested you copy the contents of awspawn into ~/.config/awesomestart
 		-- then remove the "$HOME/.config/awesomestart" line from the APPS array
-		'~/.config/awesome/configuration/awspawn'
+		'~/.config/awesome/configuration/awspawn',
 
 		-- You can add more start-up applications here
+
+		'flameshot'
 	},
 
 	-- List of binaries/shell scripts that will execute for a certain task
 	utils = {
 		-- Hikari's screenshot utilities (requires ksnip to be installed)
-		screenshot = utils_dir .. 'screenshot -m -s',
-		region_screenshot = utils_dir .. 'screenshot -r -s',
-		delayed_screenshot = utils_dir .. 'screenshot -d 10 -r',
-		ss_and_edit_screenshot = utils_dir .. 'screenshot -r',
+		screenshot = 'flameshot full -c',
+		region_screenshot = 'flameshot gui',
+		delayed_screenshot = 'flameshot gui -d 10000',
+		ss_and_edit_screenshot = 'flameshot screen -c',
 
 		-- Other screenshot utilities using maim
 		-- Fullscreen screenshot
-		full_screenshot = utils_dir .. 'snap full',
+		full_screenshot = 'flameshot full -c',
 		-- Area screenshot
-		area_screenshot = utils_dir .. 'snap area',
+		area_screenshot = 'flameshot gui',
 
 		-- Emoji keyboard toggle script
 		-- (edit the script inside ~/.config/awesome/utilities to use your keyboard layout settings!)

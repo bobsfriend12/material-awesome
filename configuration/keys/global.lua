@@ -1,9 +1,9 @@
 local awful = require('awful')
 local beautiful = require('beautiful')
-
-require('awful.autofocus')
-
+-- 
 local hotkeys_popup = require('awful.hotkeys_popup').widget
+-- local hotkeys_popup = require('awful.hotkeys_popup').widget.new([hide_without_description = true])
+
 
 local modkey = require('configuration.keys.mod').mod_key
 local altkey = require('configuration.keys.mod').alt_key
@@ -22,13 +22,15 @@ local global_keys = awful.util.table.join(
 		hotkeys_popup.show_help, 
 		{description = 'show help', group = 'awesome'}
 	),
-	awful.key({modkey, 'Control'}, 
+	awful.key(
+		{modkey, 'Control'}, 
 		'r', 
 		awesome.restart, 
 		{description = 'reload awesome', group = 'awesome'}
 	),
 	
-	awful.key({modkey, 'Control'}, 
+	awful.key(
+		{modkey, 'Control'}, 
 		'q', 
 		awesome.quit, 
 		{description = 'quit awesome', group = 'awesome'}
@@ -241,7 +243,7 @@ local global_keys = awful.util.table.join(
 		{},
 		'XF86AudioNext',
 		function()
-			awful.spawn('mpc next', false)
+			awful.spawn('playerctl next', false)
 		end,
 		{description = 'next music', group = 'hotkeys'}
 	),
@@ -249,7 +251,7 @@ local global_keys = awful.util.table.join(
 		{},
 		'XF86AudioPrev',
 		function()
-			awful.spawn('mpc prev', false)
+			awful.spawn('playerctl previous', false)
 		end,
 		{description = 'previous music', group = 'hotkeys'}
 	),
@@ -257,7 +259,7 @@ local global_keys = awful.util.table.join(
 		{},
 		'XF86AudioPlay',
 		function()
-			awful.spawn('mpc toggle', false)
+			awful.spawn('playerctl play-pause', false)
 		end,
 		{description = 'play/pause music', group = 'hotkeys'}
 
@@ -352,14 +354,14 @@ local global_keys = awful.util.table.join(
 		end,
 		{description = 'Mark an area and screenshot it and edit it', group = 'Utility'}
 	),
-	--awful.key(
-		--{ }, 
-		--'Print',
-		--function ()
-			--awful.spawn.easy_async_with_shell(apps.utils.full_screenshot,function() end)
-		--end,
-		--{description = 'fullscreen screenshot', group = 'Utility'}
-	--),
+	awful.key(
+		{ }, 
+		'Print',
+		function ()
+			awful.spawn.easy_async_with_shell(apps.utils.full_screenshot,function() end)
+		end,
+		{description = 'fullscreen screenshot', group = 'Utility'}
+	),
 	--awful.key(
 		--{modkey, 'Shift'}, 
 		--'s',
@@ -658,6 +660,85 @@ for i = 1, 9 do
 				end
 			end,
 			descr_toggle_focus
+		),
+
+
+		---------------------------------
+		-- My custom keybindings
+		
+		-- Music player button
+		awful.key(
+		{}, 
+		'XF86Tools',
+		function()
+			awful.spawn(apps.default.music)
+		end,
+		{description = 'open default music app', group = 'launcher'}
+		),
+
+		-- Open calculator (in the today menu)
+		awful.key(
+		{}, 
+		'XF86Calculator',
+		function()
+			local focused = awful.screen.focused()
+
+			if focused.left_panel and focused.left_panel.opened then
+				focused.left_panel:toggle()
+			end
+
+			if focused.right_panel then
+				if _G.right_panel_mode == 'today_mode' or not focused.right_panel.visible then
+					focused.right_panel:toggle()
+					switch_rdb_pane('today_mode')
+				else
+					switch_rdb_pane('today_mode')
+				end
+
+				_G.right_panel_mode = 'today_mode'
+			end
+		end,
+		{description = 'open calculator', group = 'launcher'}
+	),
+
+	-- Open rofi with the search key
+	awful.key(
+		{}, 
+		'XF86Search',
+		function()
+			local focused = awful.screen.focused()
+
+			if focused.left_panel then
+				focused.left_panel:hide_dashboard()
+				focused.left_panel.opened = false
+			end
+			if focused.right_panel then
+				focused.right_panel:hide_dashboard()
+				focused.right_panel.opened = false
+			end
+			awful.spawn(apps.default.rofi_appmenu, false)
+		end,
+		{description = 'open application drawer', group = 'launcher'}
+	),
+
+	-- Open Defualt Mail App
+	awful.key(
+		{}, 
+		'XF86Mail',
+		function()
+			awful.spawn(apps.default.mail)
+		end,
+		{description = 'open default mail app', group = 'launcher'}
+		),
+
+	-- Open Defualt 'home' app
+	awful.key(
+		{}, 
+		'XF86HomePage',
+		function()
+			awful.spawn(apps.default.home)
+		end,
+		{description = 'open default home app', group = 'launcher'}
 		)
 	)
 end

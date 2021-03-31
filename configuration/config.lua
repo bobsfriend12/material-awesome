@@ -3,19 +3,31 @@ return {
 	widget = {
 		weather = {
 			-- API Key
-			key = '',
+			key = '485689562fd669455c5ae4c8dddeb749',
+
 			-- City ID
-			city_id = '',
+			city_id = '4906125',
+
 			-- Units
-			units = 'metric',
+			units = 'imperial',
+
 			-- Update in N seconds
-			update_interval = 1200
+			update_interval = 60,
+
+			-- Use 12hr time
+			time_format_12h = true,
+
+			-- Show Hourly Forecast
+			show_hourly_forecast = true,
+
+			-- Show daily forecast
+    		show_daily_forecast = true
 		},
 
 		-- Yes I use military time by default, deal with it ;) (or just disable it)
 		clock = {
 			-- Clock widget format
-			military_mode = true
+			military_mode = false
 		},
 
 		-- I do not use the widgets for the below configurations, but I left them here in-case you re-enable them!
@@ -89,7 +101,7 @@ return {
 		-- because this idea is actually really cool!
 		lockscreen = {
 			-- Clock format
-			military_clock = true,
+			military_clock = false,
 			-- Default password if there's no PAM integration
 			fallback_password = 'toor',
 			-- Capture intruder using webcam

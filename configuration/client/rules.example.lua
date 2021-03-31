@@ -152,6 +152,7 @@ ruled.client.connect_signal(
 			rule_any = {
 				class = {
 					'firefox',
+					'firefox-developer-edition',
 					'Tor Browser',
 					'discord',
 					'Chromium',
@@ -171,7 +172,8 @@ ruled.client.connect_signal(
 				class = {
 					'Geany',
 					'Atom',
-					'Subl3'
+					'Subl3',
+					'gedit'
 				},
 				name  = {
 					'LibreOffice',
@@ -191,7 +193,8 @@ ruled.client.connect_signal(
 					'dolphin',
 					'ark',
 					'Nemo',
-					'File-roller'
+					'File-roller',
+					'nautilus'
 				}
 			},
 			properties = {
@@ -224,7 +227,8 @@ ruled.client.connect_signal(
 					'dolphin-emu',
 					'Steam',
 					'Citra',
-					'supertuxkart'
+					'supertuxkart',
+					'minecraft-launcher'
 				},
 				name = {'Steam'}
 			},
