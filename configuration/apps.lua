@@ -14,6 +14,7 @@ return {
 		-- Default file manager
 		file_manager = 'nautilus',
 		-- Default media player
+<<<<<<< HEAD
 		multimedia = 'vlc',
 		--Defualt Music App
 		music = 'spotify',
@@ -23,6 +24,9 @@ return {
 		messageing = 'discord',
 		-- Defualt Home App
 		home = 'firefox-developer-edition',
+=======
+		multimedia = 'celluloid',
+>>>>>>> 265cbc2ace0f96744fe74f722d1f1dcc6d1b5896
 		-- Default game, can be a launcher like steam
 		game = 'minecraft-launcher',
 		-- Default graphics editor
