@@ -148,7 +148,7 @@ local awesome_overrides = function(theme)
 
 	theme.menu_height = dpi(34)
 	theme.menu_width = dpi(200)
-	theme.menu_border_width = dpi(20)
+	theme.menu_border_width = dpi(2)
 	theme.menu_bg_focus = theme.accent .. 'CC'
 
 	theme.menu_bg_normal =  theme.background:sub(1,7) .. '33'
