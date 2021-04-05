@@ -39,7 +39,7 @@ return {
 		-- Default power manager (leaving this here as example)
 		power_manager = 'xfce4-power-manager',
 		-- Default GUI package manager
-		package_manager = 'synaptic',
+		package_manager = 'pamac',
 		-- Default locker
 		lock = 'sh /home/bobsfriend12/.i3/lock',
 		-- Default quake terminal
@@ -115,7 +115,11 @@ return {
 
 		-- You can add more start-up applications here
 
-		'flameshot'
+		'flameshot',
+
+		'mailspring',
+		
+		'discord'
 	},
 
 	-- List of binaries/shell scripts that will execute for a certain task
