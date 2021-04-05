@@ -49,7 +49,7 @@ ruled.client.connect_signal(
 
 		-- Titlebar rules
 		ruled.client.append_rule {
-			id 		= 'titlebars',
+			id 	= 'titlebars',
 			rule_any = {
 				type = {
 					'normal',
@@ -68,7 +68,10 @@ ruled.client.connect_signal(
 			id = 'dialog',
 			rule_any = {
 				type  = {'dialog'},
-				class = {'Wicd-client.py', 'calendar.google.com'}
+				class = {
+					'Wicd-client.py',
+					'calendar.google.com'
+				}
 			},
 			properties = {
 				titlebars_enabled = false,
@@ -125,6 +128,20 @@ ruled.client.connect_signal(
 
 				-- Make the window stick to ALL tags/workspaces (this is what lets you toggle it on all tags)
 				sticky = true
+			}
+		}
+
+		-- Floating windows
+		ruled.client.append_rule {
+			id = 'floatingwindows',
+			rule_any = {
+				class = {
+					'scrcpy'
+				}
+			},
+			properties = {
+				-- Make the window floating
+				floating = true
 			}
 		}
 
