@@ -8,7 +8,7 @@ return {
 		-- Default terminal emulator
 		terminal = 'env alacritty',
 		-- Default web browser
-		web_browser = 'firefox-developer-edition',
+		web_browser = 'microsoft-edge-dev',
 		-- Default text editor
 		text_editor = 'gedit',
 		-- Default file manager
@@ -22,7 +22,7 @@ return {
 		-- Defualt Messaging App
 		messageing = 'discord',
 		-- Defualt Home App
-		home = 'firefox-developer-edition',
+		home = 'microsoft-edge-dev',
 		multimedia = 'celluloid',
 		-- Default game, can be a launcher like steam
 		game = 'minecraft-launcher',
