@@ -46,10 +46,16 @@ local awesome_overrides = function(theme)
 
 	-- Titlebar
 	theme.titlebar_size = dpi(34)
-	theme.titlebar_bg_focus = gtk_variable().bg_color:sub(1,7)-- .. '66'
-	theme.titlebar_bg_normal = gtk_variable().base_color:sub(1,7)-- .. '66'
-	theme.titlebar_fg_focus = gtk_variable().fg_color
-	theme.titlebar_fg_normal = gtk_variable().fg_color
+	-- theme.titlebar_bg_focus = gtk_variable().bg_color:sub(1,7)-- .. '66'
+	-- theme.titlebar_bg_normal = gtk_variable().base_color:sub(1,7)-- .. '66'
+	-- theme.titlebar_fg_focus = gtk_variable().fg_color
+	-- theme.titlebar_fg_normal = gtk_variable().fg_color
+
+
+	theme.titlebar_bg_focus = "#5a5a5a"
+	theme.titlebar_bg_normal = theme.background
+	theme.titlebar_fg_focus = "#e4e4e4"
+	theme.titlebar_fg_normal = "#ffffffde"
 
 	-- Close Button
 	theme.titlebar_close_button_normal = tip .. 'close_normal.svg'
@@ -130,7 +136,7 @@ local awesome_overrides = function(theme)
 
 	-- Borders
 	theme.border_focus = '#003f6b' --gtk_variable().bg_color
-	theme.border_normal = gtk_variable().base_color
+	theme.border_normal = "#5a5a5a"
 	theme.border_marked = '#CC9393'
 	theme.border_width = dpi(1)
 	theme.border_radius = dpi(9)

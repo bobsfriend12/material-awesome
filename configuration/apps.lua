@@ -119,7 +119,10 @@ return {
 
 		'mailspring',
 		
-		'discord'
+		'discord',
+
+		-- Udiskie to automount media
+		'udiskie &'
 	},
 
 	-- List of binaries/shell scripts that will execute for a certain task

@@ -240,7 +240,7 @@ client.connect_signal(
 				end
 			else
 				-- Move the instance to specified tag on this screen
-				local t = awful.tag.find_by_name(awful.screen.focused(), '5')
+				local t = awful.tag.find_by_name(awful.screen.focused(), '6')
 				c:move_to_tag(t)
 				t:view_only()
 
@@ -248,7 +248,7 @@ client.connect_signal(
 				if not window_mode then
 					c.fullscreen = true
 				else
-					c.floating = true
+					c.floating = false
 					awful.placement.centered(c, {honor_workarea = true})
 				end
 			end
