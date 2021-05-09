@@ -198,7 +198,7 @@ ruled.client.connect_signal(
 				}
 			},
 			properties = {
-				tag = '8',
+				tag = '9',
 				switch_to_tags = true,
 			}
 		}
