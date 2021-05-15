@@ -162,8 +162,8 @@ local global_keys = awful.util.table.join(
 		{description = 'view next non-empty tag', group = 'tag'}
 	),
 	awful.key(
-		{modkey, 'Shift'}, 
-		'F1',  
+		{modkey, altkey}, 
+		'1',  
 		function() 
 			awful.screen.focus_relative(-1) 
 		end,
@@ -171,7 +171,7 @@ local global_keys = awful.util.table.join(
 	),
 	awful.key(
 		{modkey, 'Shift'}, 
-		'F2', 
+		'2', 
 		function()
 			awful.screen.focus_relative(1)
 		end,
