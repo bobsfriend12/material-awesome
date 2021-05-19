@@ -122,7 +122,12 @@ return {
 		'discord',
 
 		-- Udiskie to automount media
-		'udiskie &'
+		'udiskie &',
+
+		--Open websites in 'app' mode with microsoft edge
+		'microsoft-edge-dev --app="https://textnow.com/messaging"',
+		'microsoft-edge-dev --app="https://mail.google.com/chat/u/0"',
+		
 	},
 
 	-- List of binaries/shell scripts that will execute for a certain task
