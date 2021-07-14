@@ -8,7 +8,7 @@ return {
 		-- Default terminal emulator
 		terminal = 'env alacritty',
 		-- Default web browser
-		web_browser = 'microsoft-edge-dev',
+		web_browser = 'microsoft-edge-dev -remote-debugging-port=9222',
 		-- Default text editor
 		text_editor = 'gedit',
 		-- Default file manager
@@ -127,6 +127,12 @@ return {
 		--Open websites in 'app' mode with microsoft edge
 		'microsoft-edge-dev --app="https://textnow.com/messaging"',
 		'microsoft-edge-dev --app="https://mail.google.com/chat/u/0"',
+
+		--Configure Monitors
+		-- './home/bobsfriend12/bin/screen.sh',
+
+		--Lxsession
+		'lxsession --session=awesome --de=awesome'
 		
 	},
 

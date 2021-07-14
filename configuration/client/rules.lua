@@ -70,7 +70,8 @@ ruled.client.connect_signal(
 				type  = {'dialog'},
 				class = {
 					'Wicd-client.py',
-					'calendar.google.com'
+					'calendar.google.com',
+					'Lxpolkit'
 				}
 			},
 			properties = {
